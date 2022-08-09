@@ -5,3 +5,7 @@ source "https://rubygems.org"
 # gem "rails"
 
 gem "rspec", "~> 3.11"
+
+gem "sinatra-contrib", "~> 2.2"
+gem "webrick", "~> 1.7"
+gem "rack-test", "~> 2.0"
