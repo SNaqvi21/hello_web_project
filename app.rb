@@ -7,12 +7,23 @@ class Application < Sinatra::Base
   # configure :development do
   #   register Sinatra::Reloader
 
+  post '/sort-names' do
+    names = params[:names]
+    names.split(",").sort.join(",")
+  end
+
+
   post '/submit' do
     name = params[:name]
     message = params[:message]
     "Thanks #{name}, you send this message: #{message}"
   end
 
+  get '/names' do
+    result = params[:banana] 
+    return result
+    # names = "Julia, Mary, Karim"
+  end
 
   get '/' do
     return "Hello!"  
