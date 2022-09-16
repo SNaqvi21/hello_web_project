@@ -21,4 +21,18 @@ describe Application do
     expect(response.body).to eq("Julia, Mary, Karim")
     end
   end
+
+  context "GET /hello" do
+    it "should return 'Helllo Syed'" do
+      response = get("/hello?name=Syed")
+      expect(response.status).to eq(200)
+      expect(response.body).to eq("Hello Syed")
+    end
+
+    it "should return 'Helllo Ali'" do
+      response = get("/hello?name=Ali")
+      expect(response.status).to eq(200)
+      expect(response.body).to eq("Hello Ali")
+    end
+  end
 end
