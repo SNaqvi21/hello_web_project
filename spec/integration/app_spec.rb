@@ -14,11 +14,11 @@ describe Application do
     end
   end
 
-  context "GET method to /names" do
-    it "returns the response 200 with a list of names " do
-    response = get("/names", banana: "Julia, Mary, Karim, Benzema")
+  context "GET to /names" do
+    it "returns the response 200 OK with a list of names " do
+    response = get("/names", names: "Julia, Mary, Karim")
     expect(response.status).to eq(200)
-    expect(response.body).to eq("Julia, Mary, Karim, Benzema")
+    expect(response.body).to eq("Julia, Mary, Karim")
     end
   end
 end

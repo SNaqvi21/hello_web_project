@@ -20,7 +20,7 @@ class Application < Sinatra::Base
   end
 
   get '/names' do
-    result = params[:banana] 
+    result = params[:names] 
     return result
     # names = "Julia, Mary, Karim"
   end
