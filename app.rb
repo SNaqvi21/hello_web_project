@@ -16,7 +16,7 @@ class Application < Sinatra::Base
   post '/submit' do
     name = params[:name]
     message = params[:message]
-    "Thanks #{name}, you send this message: #{message}"
+    "Thanks #{name}, you sent this message: #{message}"
   end
 
   get '/names' do
@@ -26,15 +26,27 @@ class Application < Sinatra::Base
   end
 
   get '/' do
-    return "Hello!"  
+    return "Hello World!"  
+  end
+
+  get '/hello' do
+
+    name = params[:name]
+    return "Hello #{name}"
   end
 
   get '/posts' do
-    return 'A list of posts'
+    name = params[:name]
+    cohort_name = params[:cohort_name]
+
+    return "Hello #{name} you are studying the #{cohort_name} cohort!"
   end
 
   post '/posts' do
-    return 'Post was created'
+
+    title = params[:title]
+
+    return "Post was created with title: #{title}"
   end
 end
 #Example when Sinatra receives a request
@@ -49,6 +61,8 @@ class Application < Sinatra::Base
 
   get '/hello' do
     # This route is not executed (the path doesn't match).    
+    name = params[:name]
+    return "Hello #{name}"
   end
 
   get '/' do
